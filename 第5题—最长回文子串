@@ -2,3 +2,46 @@
   1、回文子串的一个特点是“头尾字符肯定相同”。由此先遍历整个字符串，先找到首尾相同的子字符串，然后判断该字符串是否为回文子串
   2、若该子串是回文子串，则与现存的最长回文子串比较，若该子串更长，则更新最长回文子串，否则继续寻找遍历下一个首尾相同的子串。
   显然，该方法属于暴力法之一，所需时间较长。
+  代码如下：
+  class Solution:
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        def isPalindrome(x):        # 判断是否是回文字符串
+            """
+            :type x: int
+            :rtype: bool
+            """
+            length = len(x)
+            if length == 0:
+                return False
+            if length == 1:
+                return True
+            xReverse = x[::-1]
+            if xReverse == x:
+                return True
+            else:
+                return False
+                
+        length = len(s)
+        if length == 0:
+            return ""
+        if length == 1:
+            return s
+        i = 0
+        lengthOfPalindrome = 1
+        palindrome = s[0]
+        while i < length:             # 遍历整个字符串，寻找首尾相同的子串，并判断是否为回文串及是否更新
+            j = i + 1
+            while j < length:
+                if s[i] == s[j]:
+                    subString = s[i:j+1]
+                    if isPalindrome(subString):
+                        if j - i + 1 > lengthOfPalindrome:
+                            lengthOfPalindrome = j - i + 1
+                            palindrome = subString
+                j += 1
+            i += 1
+        return palindrome
