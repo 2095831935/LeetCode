@@ -48,6 +48,6 @@
    
 
 二、最长公共子串
-（1）、利用[动态规划方法](https://www.cnblogs.com/ider/p/longest-common-substring-problem-optimization.html#https://www.cnblogs.com/ider/p/longest-common-substring-problem-optimization.html)去寻找字符串s与其反转字符串s'的最长公共子串
+（1）、利用[动态规划方法](https://www.cnblogs.com/ider/p/longest-common-substring-problem-optimization.html#https://www.cnblogs.com/ider/p/longest-common-substring-problem-optimization.html) 去寻找字符串s与其反转字符串s'的最长公共子串
       再寻找过程中，对每个最长公共子串的候选项进行判断是不是为回文串，由于寻找最长公共子串的方法的时间复杂度为O(n^{2})，判断是否为回文串的时间复杂度为）O(n)，因此总的时间复杂度为O(n^{3})，与暴力法的时间复杂度相同
 （2）、利用后缀树结构寻找最长公共子串……
