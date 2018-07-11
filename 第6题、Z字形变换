@@ -1,0 +1,79 @@
+方法一、
+def convert(self, s, numRows):
+        """
+        :type s: str
+        :type numRows: int
+        :rtype: str
+        """
+        import numpy as np
+        import math
+        result = ''
+        length = len(s)
+        if numRows == 1:
+            return s
+        index = 0
+        while index < length:
+            result += s[index]
+            index += 2 * (numRows - 1)
+        for i in range(1, numRows-1):
+            flag = 0
+            index = i
+            step0 = 2 * (numRows - i - 1)
+            step1 = 2 * i
+            while index < length:
+                result += s[index]
+                if flag == 0:
+                    index += step0
+                    flag = 1
+                else:
+                    index += step1
+                    flag = 0 
+        index = numRows - 1
+        while index < length:
+            result += s[index]
+            index += 2 * (numRows - 1)
+        return result
+方法二、
+def convert(self, s, numRows):
+        """
+        :type s: str
+        :type numRows: int
+        :rtype: str
+        """
+        if numRows == 1:
+            return s
+        length = len(s)
+        row = min(length, numRows)
+        Zlist = [''] * row
+        result = ''
+        curRow = 0
+        flag = False
+        for c in s:
+            Zlist[curRow] += c
+            if (curRow == 0) or (curRow == numRows - 1):
+                flag = ~flag
+            curRow += 1 if flag else -1
+        for i in range(row):
+            result += Zlist[i]
+        return result
+方法三、
+def convert(self, s, numRows):
+        """
+        :type s: str
+        :type numRows: int
+        :rtype: str
+        """
+        if numRows == 1:
+            return s
+        result = ''
+        length = len(s)
+        step = 2 * numRows - 2
+        for i in range(numRows):
+            j = 0
+            while (j + i) < length:
+                result += s[j + i]
+                if (i != 0) and (i != numRows - 1) and (j + step - i < length):
+                    result += s[j + step - i]
+                j += step
+        return result
+        
