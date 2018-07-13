@@ -1,0 +1,78 @@
+方法一、（自己写）
+class Solution:
+    def myAtoi(self, str):
+        """
+        :type str: str
+        :rtype: int
+        """
+        s = str.lstrip()
+        length = len(s)
+        if length == 0:
+            return 0
+        elif length == 1:
+            if ((ord(s) >= 48) and (ord(s) <= 57)):
+                return int(s)
+            else:
+                return 0
+        maxNum = 2 ** 31 - 1
+        minNum = -2**31
+        intChar = ''
+        if (ord(s[0]) == 43) or (ord(s[0]) == 45):
+            intChar += s[0]
+            for c in s[1:]:
+                if ((ord(c) >= 48) and (ord(c) <= 57)):
+                    intChar += c
+                else:
+                    break
+        else:
+            for c in s:
+                if ((ord(c) >= 48) and (ord(c) <= 57)):
+                    intChar += c
+                else:
+                    break
+
+        length = len(intChar)
+        if length == 1:
+            if ((ord(intChar) >= 48) and (ord(intChar) <= 57)):
+                return int(intChar)
+            else:
+                return 0
+        elif length > 1:
+            intNum = int(intChar)
+            if intNum > maxNum:
+                return maxNum
+            elif intNum < minNum:
+                return minNum
+            else:
+                return intNum
+        else:
+            return 0
+
+方法二、
+class Solution:
+    def myAtoi(self, str):
+        """
+        :type str: str
+        :rtype: int
+        """
+        if (str == ""):
+            return 0
+        res = ''
+        index = 0
+        while index < len(str) and str[index] == ' ':
+            index += 1
+        if index < len(str) and str[index] in '-+':
+            res += str[index]
+            index += 1
+        while index < len(str) and str[index] in '0123456789':
+            res += str[index]
+            index += 1
+    
+        if (res == '' or res == '+' or res == '-'):
+            return 0
+        if (int(res) > 2**31 - 1):
+            return 2**31 - 1
+        elif (int(res) < -2**31):
+            return -2**31
+        else:
+            return int(res)
