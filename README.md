@@ -6,6 +6,10 @@ Record the process of solve LeetCode's programming questions
 + 基于递归的算法：判断两个树p、q的根结点是否相同，再判断p.left与q.left及p.right与q.right是否相同；时间复杂度较高
 + 基于遍历的算法：在基于栈的遍历过程中比较节点是否相同  
 ## 101题：Symmetric Tree  
-+ 基于递归的算法(101_1.py)：输入两棵相同的树p,q，判断根结点是否相同q.val==p.val；再判断p.left与q.right及p.right与q.left是否对称；  
++ 基于递归的算法(101_1.py)：输入两棵相同的树p,q，判断根结点是否相同q.val==p.val；再判断p.left与q.right及p.right与q.left是否对称； 
+  + Time complexity : O(n)O(n). Because we traverse the entire input tree once, the total run time is O(n)O(n), where nn is the total number of nodes in the tree.  
+  + Space complexity : The number of recursive calls is bound by the height of the tree. In the worst case, the tree is linear and the height is in O(n)O(n). Therefore, space complexity due to recursive calls on the stack is O(n)O(n) in the worst case.  
 + 基于迭代的算法(101_2.py)：在每个iteration中，将当前高度的树节点存入一个列表中，并判断这个列表中的节点是否对称；100_2的解法中空间复杂度随着树高度指数增加；  
 + 基于迭代的算法(101_3.py 源自Leetcode其他人): 在每个迭代的过程中只比较两个应该对称的节点  
+  + Time complexity : O(n)O(n). Because we traverse the entire input tree once, the total run time is O(n)O(n), where nn is the total number of nodes in the tree.  
+  + Space complexity : There is additional space required for the search queue. In the worst case, we have to insert O(n)O(n) nodes in the queue. Therefore, space complexity is O(n)O(n).  
