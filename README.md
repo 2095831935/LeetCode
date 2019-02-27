@@ -23,5 +23,5 @@ Record the process of solve LeetCode's programming questions
 
 ## 107题：Binary Level order Traversal II  
 + 将102题的输出结果做倒序输出（答案略过）
-+ 在102题的递归解法中，改变输出结果的顺序以及每次均在`res`开始处增加空列表
++ `107_1.py` 在102题的递归解法`102_2.py`中，改变输出结果的顺序以及每次均在`res`开始处增加空列表
 
