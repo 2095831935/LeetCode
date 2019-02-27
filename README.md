@@ -13,3 +13,5 @@ Record the process of solve LeetCode's programming questions
 + 基于迭代的算法(101_3.py 源自Leetcode其他人): 在每个迭代的过程中只比较两个应该对称的节点  
   + Time complexity : O(n)O(n). Because we traverse the entire input tree once, the total run time is O(n)O(n), where nn is the total number of nodes in the tree.  
   + Space complexity : There is additional space required for the search queue. In the worst case, we have to insert O(n)O(n) nodes in the queue. Therefore, space complexity is O(n)O(n).  
+## 102题：Binary Level order Traversal  
++ `102_1.py` 基于迭代的方法: 类似于`101_2.py`中的想法，`stack`中存储的是当前层的节点，然后遍历`stack`中的节点，将该层的值保存到`ans`中，同时将这些节点的左右子节点刷新`stack`，一层一层的往下遍历  
