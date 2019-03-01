@@ -23,5 +23,8 @@ Record the process of solve LeetCode's programming questions
 
 ## 107题：Binary Level order Traversal II  
 + 将102题的输出结果做倒序输出（答案略过）
-+ `107_1.py` 在102题的递归解法`102_2.py`中，改变输出结果的顺序以及每次均在`res`开始处增加空列表
++ `107_1.py` 在102题的递归解法`102_2.py`中，改变输出结果的顺序以及每次均在`res`开始处增加空列表  
+
+## 103题：Binary Tree Zigzag Level Order Traversal  
++ `103_1.py` 在`102_1.py`的基础上进行修改，初始化变量`direction=0`，在每个迭代过程中将`direction += 1`，这样可用`(-1)**direction==1`表示当前层从左到右遍历，`(-1)**direction==-1`表示当前层从右向左遍历，修改`ans.append(level_val)`为`ans.append(level_val[::(-1)**direction])`即可
 
