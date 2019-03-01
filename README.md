@@ -26,5 +26,5 @@ Record the process of solve LeetCode's programming questions
 + `107_1.py` 在102题的递归解法`102_2.py`中，改变输出结果的顺序以及每次均在`res`开始处增加空列表  
 
 ## 103题：Binary Tree Zigzag Level Order Traversal  
-+ `103_1.py` 在`102_1.py`的基础上进行修改，初始化变量`direction=0`，在每个迭代过程中将`direction += 1`，这样可用`(-1)**direction==1`表示当前层从左到右遍历，`(-1)**direction==-1`表示当前层从右向左遍历，修改`ans.append(level_val)`为`ans.append(level_val[::(-1)**direction])`即可
-
++ `103_1.py` 在`102_1.py`的基础上进行修改，初始化变量`direction=0`，在每个迭代过程中将`direction += 1`，这样可用`(-1)**direction==1`表示当前层从左到右遍历，`(-1)**direction==-1`表示当前层从右向左遍历，修改`ans.append(level_val)`为`ans.append(level_val[::(-1)**direction])`即可  
++ `103_2.py` 在`102_1.py`的基础上的另一种修改方式，将`level_val.append(node.val)`修改为`if (-1)**direction == 1:level_val.append(node.val); else:level_val.insert(0, node.val);`
