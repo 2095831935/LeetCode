@@ -29,3 +29,7 @@ Record the process of solve LeetCode's programming questions
 + `103_1.py` 在`102_1.py`的基础上进行修改，初始化变量`direction=0`，在每个迭代过程中将`direction += 1`，这样可用`(-1)**direction==1`表示当前层从左到右遍历，`(-1)**direction==-1`表示当前层从右向左遍历，修改`ans.append(level_val)`为`ans.append(level_val[::(-1)**direction])`即可  
 + `103_2.py` 在`102_1.py`的基础上的另一种修改方式，将`level_val.append(node.val)`修改为`if (-1)**direction == 1:level_val.append(node.val); else:level_val.insert(0, node.val);`
 + `103_3.py` 在`102_2.py`的基础上做的修改，若当前层为奇数，表明应该从右向左遍历，这时将`res[level].append(root.val)`修改为从开始处插入，即`res[level].insert(0, root.val)`即可
+
+## 104题：Maximum Depth of Binary Tree
++ `104_1.py` 基于递归的算法：树root深度的递归表达式 `depth(root) = max(depth(root.left)+depth(root.right))+1`；即树的深度为左子树的深度+1与右子树深度+1中的最大值  
++
