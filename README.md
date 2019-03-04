@@ -39,4 +39,5 @@ Record the process of solve LeetCode's programming questions
   + 空间复杂度：O(N).
 
 ## 105题：Construct Binary Tree from Preorder and Inorder Traversal
-+ `105_1.py` 基于递归的方法：preorder第一个元素为root，在inorder里面找到root，在它之前的为左子树（长L1），之后为右子树（长L2）。preorder[1]到preorder[L1]为左子树,之后为右子树，分别递归。(ps: 假设树中没有重复的元素)
++ `105_1.py` 基于递归的方法：preorder第一个元素为root，在inorder里面找到root，在它之前的为左子树（长L1），之后为右子树（长L2）。preorder[1]到preorder[L1]为左子树,之后为右子树，分别递归。(ps: 假设树中没有重复的元素)  
++ `105_2.py` 基于迭代的方法：中序遍历的结果：左子树的节点在根节点之前，右子树的节点在根节点之后；1. 遍历前序遍历的结果：将节点存入栈stack中，2. 将当前节点在中序遍历结果中的位置与stack[-1]在中序遍历结果中的位置比较；3. 若小于，则表明当前节点是stack[-1]的左节点；4. 反之，循环：u=stack.pop()，直到stack[-1]在中序遍历结果中的位置大于当前节点在中序遍历结果中的位置，则当前节点即为u的右节点。5. 将当前节点存入stack中  
