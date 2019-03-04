@@ -37,3 +37,6 @@ Record the process of solve LeetCode's programming questions
 + `104_2.py` 基于迭代的算法，在`102_1.py`的基础上进行修改所得，对树的每一层做遍历，在每次迭代中，将高度+1，直到最底的叶结点为止
   + 时间复杂度：O(N).
   + 空间复杂度：O(N).
+
+## 105题：Construct Binary Tree from Preorder and Inorder Traversal
++ `105_1.py` 基于递归的方法：preorder第一个元素为root，在inorder里面找到root，在它之前的为左子树（长L1），之后为右子树（长L2）。preorder[1]到preorder[L1]为左子树,之后为右子树，分别递归。(ps: 假设树中没有重复的元素)
