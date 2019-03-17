@@ -45,5 +45,9 @@ Record the process of solve LeetCode's programming questions
 
 ## 106题：Construct Binary Tree from Inorder and Postorder Traversal
 + 解法参照105题的方法
+
 ## 110题：Balanced Binary Tree
 + 先检查当前根节点下的左右子树的高度差是否超过1；再分别对左右子树检查是否为平衡二叉树
+
+## 111题：
++ 递归的方法：分别对左、右子树求最小深度，若两者的深度均大于1，则树的深度为1+min(左子树深度，右子树深度)，否则便为1+左子树深度+右子树深度；（特殊情况是左子树或右子树为空时的情况）
