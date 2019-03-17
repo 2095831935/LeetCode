@@ -45,5 +45,5 @@ Record the process of solve LeetCode's programming questions
 
 ## 106题：Construct Binary Tree from Inorder and Postorder Traversal
 + 解法参照105题的方法
-## 110题：
+## 110题：Balanced Binary Tree
 + 先检查当前根节点下的左右子树的高度差是否超过1；再分别对左右子树检查是否为平衡二叉树
